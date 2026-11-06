@@ -1,3 +1,4 @@
+
 const shopGrid = document.getElementById("shopProductGrid");
 
 const searchInput = document.getElementById("productSearch");
@@ -12,7 +13,9 @@ const filterToggle = document.getElementById("filterToggle");
 let minPrice = null;
 let maxPrice = null;
 
+// ==============================
 // GET SELECTED FILTERS
+// ==============================
 
 function getSelectedValues(name) {
     return [...document.querySelectorAll(
@@ -20,7 +23,57 @@ function getSelectedValues(name) {
     )].map(input => input.value);
 }
 
+// ==============================
+// WISHLIST STORAGE
+// ==============================
+
+function getWishlist() {
+    try {
+        const wishlist = JSON.parse(
+            localStorage.getItem("technovaWishlist") || "[]"
+        );
+
+        return Array.isArray(wishlist)
+            ? wishlist.map(Number)
+            : [];
+
+    } catch (error) {
+        return [];
+    }
+}
+
+// ==============================
+// TOGGLE WISHLIST
+// ==============================
+
+function toggleWishlist(id) {
+
+    id = Number(id);
+
+    let wishlist = getWishlist();
+
+    if (wishlist.includes(id)) {
+
+        wishlist = wishlist.filter(item => item !== id);
+
+    } else {
+
+        wishlist.push(id);
+
+    }
+
+    localStorage.setItem(
+        "technovaWishlist",
+        JSON.stringify(wishlist)
+    );
+
+    // Refresh product cards and heart state
+    renderShopProducts();
+}
+
+// ==============================
 // FILTER PRODUCTS
+// ==============================
 
 function getFilteredProducts() {
 
@@ -28,6 +81,7 @@ function getFilteredProducts() {
 
     const categories = getSelectedValues("category");
     const brands = getSelectedValues("brand");
+
     const rating = Number(
         document.querySelector('input[name="rating"]:checked')?.value || 0
     );
@@ -89,21 +143,26 @@ function getFilteredProducts() {
     return filtered;
 }
 
+// ==============================
 // DISPLAY PRODUCTS
+// ==============================
 
 function renderShopProducts() {
 
     const filtered = getFilteredProducts();
 
+    const wishlist = getWishlist();
+
     resultCount.textContent =
         `Showing ${filtered.length} of ${products.length} products`;
 
     noProducts.hidden = filtered.length !== 0;
+
     shopGrid.style.display = filtered.length ? "grid" : "none";
 
     shopGrid.innerHTML = filtered.map(product => {
 
-        const isWishlisted = getWishlist().includes(product.id);
+        const isWishlisted = wishlist.includes(Number(product.id));
 
         return `
             <div class="product-card">
@@ -126,10 +185,11 @@ function renderShopProducts() {
                 <div class="product-actions">
 
                     <button
-                        class="${isWishlisted ? "wish-active" : ""}"
+                        class="wishlist-btn ${isWishlisted ? "wish-active" : ""}"
                         onclick="toggleWishlist(${product.id})"
-                        aria-label="Toggle wishlist"
-                        title="Wishlist"
+                        aria-label="${isWishlisted ? "Remove from wishlist" : "Add to wishlist"}"
+                        aria-pressed="${isWishlisted}"
+                        title="${isWishlisted ? "Remove from wishlist" : "Add to wishlist"}"
                     >
                         <i data-lucide="heart"></i>
                     </button>
@@ -151,6 +211,7 @@ function renderShopProducts() {
                     <div class="product-bottom">
 
                         <div>
+
                             <div class="product-price">
                                 ₹${product.price.toLocaleString("en-IN")}
                             </div>
@@ -158,6 +219,7 @@ function renderShopProducts() {
                             <div class="old-price">
                                 ₹${product.mrp.toLocaleString("en-IN")}
                             </div>
+
                         </div>
 
                         <button
@@ -177,56 +239,46 @@ function renderShopProducts() {
 
     }).join("");
 
-    if (window.lucide) lucide.createIcons();
-}
-
-// WISHLIST STORAGE
-
-function getWishlist() {
-    return JSON.parse(localStorage.getItem("technovaWishlist")) || [];
-}
-
-function toggleWishlist(id) {
-
-    let wishlist = getWishlist();
-
-    if (wishlist.includes(id)) {
-        wishlist = wishlist.filter(item => item !== id);
-    } else {
-        wishlist.push(id);
+    if (window.lucide) {
+        lucide.createIcons();
     }
-
-    localStorage.setItem(
-        "technovaWishlist",
-        JSON.stringify(wishlist)
-    );
-
-    renderShopProducts();
 }
 
+// ==============================
 // PRODUCT DETAILS NAVIGATION
+// ==============================
 
 function openProduct(id) {
     window.location.href = `product.html?id=${id}`;
 }
 
+// ==============================
 // SEARCH EVENT
+// ==============================
 
 searchInput.addEventListener("input", renderShopProducts);
 
+// ==============================
 // SORT EVENT
+// ==============================
 
 sortSelect.addEventListener("change", renderShopProducts);
 
+// ==============================
 // CATEGORY & BRAND EVENTS
+// ==============================
 
 document.querySelectorAll(
     'input[name="category"], input[name="brand"], input[name="rating"]'
 ).forEach(input => {
+
     input.addEventListener("change", renderShopProducts);
+
 });
 
+// ==============================
 // PRICE FILTER
+// ==============================
 
 document.getElementById("applyPrice").addEventListener("click", () => {
 
@@ -246,15 +298,22 @@ document.getElementById("applyPrice").addEventListener("click", () => {
     }
 
     renderShopProducts();
+
 });
 
+// ==============================
 // CLEAR FILTERS
+// ==============================
 
 function clearAllFilters() {
 
     document.querySelectorAll(
         'input[name="category"], input[name="brand"], input[name="rating"]'
-    ).forEach(input => input.checked = false);
+    ).forEach(input => {
+
+        input.checked = false;
+
+    });
 
     searchInput.value = "";
     sortSelect.value = "default";
@@ -274,15 +333,22 @@ document.getElementById("clearFilters")
 document.getElementById("resetSearch")
     .addEventListener("click", clearAllFilters);
 
+// ==============================
 // MOBILE FILTER
+// ==============================
 
 filterToggle.addEventListener("click", () => {
+
     sidebar.classList.toggle("show");
+
 });
 
+// ==============================
 // URL CATEGORY FILTER
+// ==============================
 
 const urlParams = new URLSearchParams(window.location.search);
+
 const selectedCategory = urlParams.get("category");
 
 if (selectedCategory) {
@@ -298,6 +364,8 @@ if (selectedCategory) {
     }
 }
 
+// ==============================
 // INITIALIZE
+// ==============================
 
 renderShopProducts();

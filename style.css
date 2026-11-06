@@ -577,3 +577,285 @@ button {
     color: var(--muted);
     font-size: 12px;
 }
+/* ==============================
+   TECHNOVA COMMON NAVBAR
+============================== */
+
+.navbar {
+    width: 100%;
+    background: #080d18;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav-content {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* LOGO */
+
+.navbar .logo {
+    color: #f8fafc;
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+}
+
+.navbar .logo span {
+    color: #2563eb;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #06b6d4;
+}
+
+/* RIGHT SIDE ACTIONS */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+.nav-actions button,
+.nav-actions > a:not(.account-btn) {
+    color: #f8fafc;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.nav-actions button:hover,
+.nav-actions > a:not(.account-btn):hover {
+    color: #06b6d4;
+}
+
+.nav-actions svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+}
+
+/* CART */
+
+.nav-actions .cart-icon {
+    position: relative;
+    padding: 5px;
+}
+
+.cart-icon span,
+#cartCount {
+    position: absolute;
+    top: -9px;
+    right: -10px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ACCOUNT BUTTON */
+
+.account-btn {
+    background: #2563eb;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.account-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn svg {
+    width: 27px;
+    height: 27px;
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+============================== */
+
+@media (max-width: 992px) {
+    .nav-content {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-actions {
+        gap: 15px;
+    }
+
+    .navbar .logo {
+        font-size: 27px;
+    }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+    .nav-content {
+        min-height: 72px;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .navbar .logo {
+        font-size: 25px;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 3;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+        gap: 15px;
+    }
+
+    .nav-actions svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .account-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #080d18;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nav-links.active,
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content {
+        gap: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 21px;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .nav-actions svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .account-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+/* WISHLIST COUNT BADGE */
+
+.nav-actions .wishlist-icon {
+    position: relative;
+}
+
+#wishlistCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

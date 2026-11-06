@@ -73,7 +73,7 @@ function addToCart(id) {
 
     updateCartCount();
 
-    alert("Product added to cart!");
+   
 }
 
 function updateCartCount() {
@@ -102,3 +102,32 @@ displayProducts();
 updateCartCount();
 
 if (window.lucide) lucide.createIcons();
+
+// ==============================
+// WISHLIST COUNT UPDATE
+// ==============================
+
+function updateWishlistCount() {
+    const wishlistCount = document.getElementById("wishlistCount");
+
+    if (!wishlistCount) return;
+
+    try {
+        const wishlist = JSON.parse(
+            localStorage.getItem("technovaWishlist") || "[]"
+        );
+
+        wishlistCount.textContent = Array.isArray(wishlist)
+            ? wishlist.length
+            : 0;
+
+    } catch (error) {
+        wishlistCount.textContent = "0";
+    }
+}
+
+// Update when page loads
+document.addEventListener("DOMContentLoaded", updateWishlistCount);
+
+// Update when wishlist changes in another tab
+window.addEventListener("storage", updateWishlistCount);

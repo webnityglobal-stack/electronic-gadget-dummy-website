@@ -13,21 +13,42 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <a href="index.html" class="logo">Tech<span>Nova</span></a>
+    <div class="container nav-content">
 
-        <nav class="nav-links">
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="shop.html">Shop</a>
-            <a href="wishlist.html">Wishlist</a>
-            <a href="cart.html" class="active">
-                Cart <span id="cartCount">0</span>
-            </a>
+            <a href="about.html">About</a>
+           <a href="contact.html">Contact</a>
         </nav>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            ☰
+        <div class="nav-actions">
+            <button aria-label="Search" onclick="location.href='shop.html'">
+                <i data-lucide="search"></i>
+            </button>
+
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i data-lucide="heart"></i>
+            </a>
+
+            <a href="cart.html" class="cart-icon" aria-label="Cart">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" class="account-btn">Account</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
         </button>
-    </header>
+
+    </div>
+</header>
 
     <main class="cart-page">
 
@@ -121,6 +142,9 @@
     <script src="product.js"></script>
     <script src="main.js"></script>
     <script src="cart.js"></script>
-
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>

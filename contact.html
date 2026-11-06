@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+   <header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+           <a href="contact.html"class="active">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button aria-label="Search" onclick="location.href='shop.html'">
+                <i data-lucide="search"></i>
+            </button>
+
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i data-lucide="heart"></i>
+            </a>
+
+            <a href="cart.html" class="cart-icon" aria-label="Cart">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" class="account-btn">Account</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+</header>
+
+
+
+    <main>
+
+        <!-- CONTACT HERO -->
+        <section class="contact-hero">
+
+            <span class="contact-tag">GET IN TOUCH</span>
+
+            <h1>Let's Start a <span>Conversation</span></h1>
+
+            <p>
+                Have a question about a product, order or service?
+                Our team is here to help you.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section">
+
+            <div class="contact-info">
+
+                <span class="contact-small-title">CONTACT INFORMATION</span>
+
+                <h2>We're Here to <span>Help You</span></h2>
+
+                <p class="contact-description">
+                    Reach out to us for product enquiries, order assistance
+                    or any other questions. We would love to hear from you.
+                </p>
+
+                <div class="contact-info-card">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <h3>Email Us</h3>
+                        <a href="mailto:support@technova.com">
+                            support@technova.com
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-info-card">
+
+                    <div class="contact-icon">☎</div>
+
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>Contact number coming soon</p>
+                    </div>
+
+                </div>
+
+                <div class="contact-info-card">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <h3>Our Location</h3>
+                        <p>Online Store – Serving Customers Online</p>
+                    </div>
+
+                </div>
+
+                <div class="contact-social">
+
+                    <h3>We're happy to connect!</h3>
+
+                    <p>
+                        Send us an email and our team will get back to you.
+                    </p>
+
+                    <a href="mailto:support@technova.com" class="contact-email-btn">
+                        Email TechNova →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form-card">
+
+                <div class="form-heading">
+                    <span>CONTACT FORM</span>
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below to get in touch.</p>
+                </div>
+
+                <form id="contactForm">
+
+                    <div class="contact-form-grid">
+
+                        <div class="contact-field">
+                            <label for="contactName">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                placeholder="Enter your full name"
+                                required
+                                minlength="2"
+                            >
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contactEmail">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                placeholder="Enter your email"
+                                required
+                            >
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contactPhone">Phone Number</label>
+
+                            <input
+                                type="tel"
+                                id="contactPhone"
+                                placeholder="Enter mobile number"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10"
+                                required
+                            >
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="contactSubject">Subject</label>
+
+                            <select id="contactSubject" required>
+                                <option value="">Select Subject</option>
+                                <option value="Product Enquiry">Product Enquiry</option>
+                                <option value="Order Related">Order Related</option>
+                                <option value="Payment Related">Payment Related</option>
+                                <option value="Return and Refund">Return & Refund</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="contact-field full-field">
+                            <label for="contactMessage">Your Message</label>
+
+                            <textarea
+                                id="contactMessage"
+                                rows="5"
+                                placeholder="Write your message here..."
+                                required
+                                minlength="10"
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <p id="contactFormMessage" class="contact-form-message"></p>
+
+                    <button type="submit" class="contact-submit-btn">
+                        Send Message →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="contact-faq">
+
+            <div class="contact-section-heading">
+                <span>NEED HELP?</span>
+                <h2>Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="faq-grid">
+
+                <div class="faq-card">
+                    <h3>How can I track my order?</h3>
+                    <p>
+                        Visit the Track Order page and enter your order ID
+                        to check your order status.
+                    </p>
+                    <a href="tracking.html">Track Your Order →</a>
+                </div>
+
+                <div class="faq-card">
+                    <h3>How can I manage my account?</h3>
+                    <p>
+                        Login to your TechNova account to manage your profile
+                        and view your orders.
+                    </p>
+                    <a href="account.html">My Account →</a>
+                </div>
+
+                <div class="faq-card">
+                    <h3>Where can I explore products?</h3>
+                    <p>
+                        Visit our shop to discover the latest electronics
+                        and gadgets.
+                    </p>
+                    <a href="shop.html">Explore Shop →</a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    Tech<span>Nova</span>
+                </a>
+
+                <p>
+                    Upgrade your lifestyle with the latest technology.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Customer</h3>
+
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">My Cart</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="tracking.html">Track Order</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Contact</h3>
+
+                <p>We're here to help you.</p>
+
+                <a href="mailto:support@technova.com">
+                    support@technova.com
+                </a>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 TechNova. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+    <script src="contact.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
