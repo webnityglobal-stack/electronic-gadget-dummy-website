@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">Tech<span>Nova</span></a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="cart.html">Cart</a>
+        <a href="account.html" class="active">My Account</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+    </button>
+</header>
+
+<main class="account-page">
+
+    <section class="account-heading">
+        <span>MY PROFILE</span>
+        <h1>My <span>Account</span></h1>
+        <p>Manage your profile and track your orders.</p>
+    </section>
+
+    <div class="account-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="account-sidebar">
+
+            <div class="profile-avatar" id="profileAvatar">U</div>
+
+            <h3 id="sidebarName">Customer</h3>
+            <p id="sidebarEmail">customer@email.com</p>
+
+            <div class="account-menu">
+                <button class="account-tab active" data-tab="profile">
+                    👤 My Profile
+                </button>
+
+                <button class="account-tab" data-tab="orders">
+                    📦 My Orders
+                </button>
+
+                <button class="account-tab" data-tab="settings">
+                    ⚙️ Account Settings
+                </button>
+
+                <button id="logoutBtn" class="logout-btn">
+                    ↪ Logout
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <section class="account-content">
+
+            <!-- PROFILE -->
+            <div class="account-panel active" id="profilePanel">
+
+                <div class="panel-heading">
+                    <h2>Personal Information</h2>
+                    <button id="editProfileBtn">Edit Profile</button>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="account-form-grid">
+
+                        <div class="account-field">
+                            <label>Full Name</label>
+                            <input type="text" id="profileName" disabled required>
+                        </div>
+
+                        <div class="account-field">
+                            <label>Email Address</label>
+                            <input type="email" id="profileEmail" disabled>
+                        </div>
+
+                        <div class="account-field">
+                            <label>Mobile Number</label>
+                            <input type="tel" id="profilePhone"
+                                pattern="[6-9][0-9]{9}" maxlength="10"
+                                disabled required>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-actions" id="profileActions" hidden>
+                        <button type="submit" class="save-profile-btn">
+                            Save Changes
+                        </button>
+
+                        <button type="button" id="cancelEditBtn">
+                            Cancel
+                        </button>
+                    </div>
+
+                    <p id="profileMessage" class="profile-message"></p>
+
+                </form>
+
+            </div>
+
+            <!-- ORDERS -->
+            <div class="account-panel" id="ordersPanel">
+
+                <div class="panel-heading">
+                    <h2>My Orders</h2>
+                </div>
+
+                <div id="ordersList"></div>
+
+            </div>
+
+            <!-- SETTINGS -->
+            <div class="account-panel" id="settingsPanel">
+
+                <div class="panel-heading">
+                    <h2>Account Settings</h2>
+                </div>
+
+                <div class="settings-card">
+                    <h3>Account Information</h3>
+                    <p>Manage your TechNova account details.</p>
+
+                    <button id="settingsEditBtn">
+                        Edit Profile
+                    </button>
+                </div>
+
+                <div class="settings-card danger-card">
+                    <h3>Logout</h3>
+                    <p>Sign out from your current account.</p>
+
+                    <button id="settingsLogoutBtn">
+                        Logout
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <a href="index.html" class="logo">Tech<span>Nova</span></a>
+        <p>Upgrade your lifestyle with the latest technology.</p>
+    </div>
+
+    <p class="copyright">© 2026 TechNova. All rights reserved.</p>
+</footer>
+
+<script src="account.js"></script>
+
+</body>
+</html>

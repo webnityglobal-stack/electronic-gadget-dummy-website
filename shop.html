@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop All Products | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="shop.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="shop.html?category=Smartphones">Smartphones</a>
+            <a href="shop.html?category=Laptops">Laptops</a>
+            <a href="shop.html?category=Headphones">Accessories</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i data-lucide="heart"></i>
+            </a>
+
+            <a href="cart.html" class="cart-icon" aria-label="Cart">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" class="account-btn">Account</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+</header>
+
+<!-- PAGE BANNER -->
+
+<section class="shop-banner">
+    <div class="container">
+        <span>TECHNOVA COLLECTION</span>
+        <h1>Explore Our <span>Products.</span></h1>
+        <p>Discover the latest technology and premium gadgets.</p>
+
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Shop</span>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP SECTION -->
+
+<section class="container shop-section">
+
+    <!-- MOBILE FILTER BUTTON -->
+
+    <button class="mobile-filter-btn" id="filterToggle">
+        <i data-lucide="sliders-horizontal"></i>
+        Filters
+    </button>
+
+    <div class="shop-layout">
+
+        <!-- FILTER SIDEBAR -->
+
+        <aside class="filter-sidebar" id="filterSidebar">
+
+            <div class="filter-heading">
+                <h2>Filters</h2>
+                <button id="clearFilters">Clear All</button>
+            </div>
+
+            <div class="filter-group">
+                <h3>Categories</h3>
+
+                <label>
+                    <input type="checkbox" name="category" value="Smartphones">
+                    Smartphones
+                </label>
+
+                <label>
+                    <input type="checkbox" name="category" value="Laptops">
+                    Laptops
+                </label>
+
+                <label>
+                    <input type="checkbox" name="category" value="Headphones">
+                    Headphones
+                </label>
+
+                <label>
+                    <input type="checkbox" name="category" value="Smartwatches">
+                    Smartwatches
+                </label>
+
+                <label>
+                    <input type="checkbox" name="category" value="Gaming">
+                    Gaming
+                </label>
+
+                <label>
+                    <input type="checkbox" name="category" value="Speakers">
+                    Speakers
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Brands</h3>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Apple">
+                    Apple
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Samsung">
+                    Samsung
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Sony">
+                    Sony
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="JBL">
+                    JBL
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Logitech">
+                    Logitech
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Dell">
+                    Dell
+                </label>
+
+                <label>
+                    <input type="checkbox" name="brand" value="Noise">
+                    Noise
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+
+                <div class="price-inputs">
+                    <input type="number" id="minPrice" placeholder="Min ₹" min="0">
+                    <input type="number" id="maxPrice" placeholder="Max ₹" min="0">
+                </div>
+
+                <button class="apply-price" id="applyPrice">
+                    Apply Price
+                </button>
+            </div>
+
+            <div class="filter-group">
+                <h3>Customer Rating</h3>
+
+                <label>
+                    <input type="radio" name="rating" value="4">
+                    4★ & above
+                </label>
+
+                <label>
+                    <input type="radio" name="rating" value="3">
+                    3★ & above
+                </label>
+            </div>
+
+        </aside>
+
+        <!-- PRODUCT CONTENT -->
+
+        <div class="shop-content">
+
+            <div class="shop-toolbar">
+
+                <div>
+                    <h2>All Products</h2>
+                    <p id="resultCount">Showing products</p>
+                </div>
+
+                <div class="toolbar-actions">
+
+                    <div class="search-box">
+                        <i data-lucide="search"></i>
+                        <input
+                            type="search"
+                            id="productSearch"
+                            placeholder="Search gadgets..."
+                        >
+                    </div>
+
+                    <select id="sortProducts">
+                        <option value="default">Sort By: Featured</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="discount">Best Discount</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="shop-product-grid" id="shopProductGrid"></div>
+
+            <div class="no-products" id="noProducts" hidden>
+                <i data-lucide="package-search"></i>
+                <h2>No Products Found</h2>
+                <p>Try changing your search or filters.</p>
+                <button id="resetSearch">Clear Filters</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="container footer-content">
+
+        <div>
+            <a href="index.html" class="logo">
+                TECH<span>NOVA</span>.
+            </a>
+            <p>Upgrade your world with next-generation technology.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+        <div>
+            <h3>Customer Support</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 TechNova. All Rights Reserved.
+    </div>
+</footer>
+
+<script src="product.js"></script>
+<script src="main.js"></script>
+<script src="shop.js"></script>
+
+</body>
+</html>

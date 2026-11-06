@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Tech<span>Nova</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html" class="active">
+                Cart <span id="cartCount">0</span>
+            </a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+    </header>
+
+    <main class="cart-page">
+
+        <!-- PAGE HEADING -->
+        <section class="cart-heading">
+            <span class="cart-eyebrow">YOUR SHOPPING BAG</span>
+            <h1>Shopping <span>Cart</span></h1>
+            <p>Review your items before proceeding to checkout.</p>
+        </section>
+
+        <!-- CART CONTENT -->
+        <section class="cart-layout">
+
+            <div class="cart-products-section">
+
+                <div class="cart-section-heading">
+                    <h2>Your Items <span id="itemCount">(0)</span></h2>
+
+                    <button id="clearCartBtn" class="clear-cart-btn">
+                        Clear Cart
+                    </button>
+                </div>
+
+                <div id="cartItems" class="cart-items">
+                    <!-- Products will load here -->
+                </div>
+
+                <a href="shop.html" class="continue-shopping">
+                    ← Continue Shopping
+                </a>
+
+            </div>
+
+            <!-- ORDER SUMMARY -->
+            <aside class="cart-summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">₹0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <strong id="discount">₹0</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <strong class="free-delivery">FREE</strong>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    <strong id="totalAmount">₹0</strong>
+                </div>
+
+                <p class="delivery-note">
+                    <span>✓</span> Free delivery on your order
+                </p>
+
+                <button id="checkoutBtn" class="checkout-btn">
+                    Proceed to Checkout →
+                </button>
+
+                <div class="secure-payment">
+                    <span>🔒</span>
+                    Secure Checkout
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="index.html" class="logo">Tech<span>Nova</span></a>
+            <p>Upgrade your lifestyle with the latest technology.</p>
+        </div>
+        <p class="copyright">
+            © 2026 TechNova. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="main.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Wishlist | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="wishlist.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            Tech<span>Nova</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="wishlist.html" class="active">Wishlist</a>
+            <a href="cart.html">Cart <span id="cartCount">0</span></a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+
+    </header>
+
+    <!-- WISHLIST PAGE -->
+    <main class="wishlist-page">
+
+        <section class="wishlist-heading">
+
+            <span class="wishlist-eyebrow">YOUR FAVOURITES</span>
+
+            <h1>My <span>Wishlist</span></h1>
+
+            <p>All your favourite products in one place.</p>
+
+        </section>
+
+        <!-- WISHLIST CONTENT -->
+        <section class="wishlist-section">
+
+            <div class="wishlist-topbar">
+
+                <h2>
+                    Saved Products
+                    <span id="wishlistCount">(0)</span>
+                </h2>
+
+                <button id="clearWishlistBtn" class="clear-wishlist-btn">
+                    Clear Wishlist
+                </button>
+
+            </div>
+
+            <div id="wishlistProducts" class="wishlist-grid">
+                <!-- Wishlist products load here -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <a href="index.html" class="logo">
+                Tech<span>Nova</span>
+            </a>
+
+            <p>Upgrade your lifestyle with the latest technology.</p>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 TechNova. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="main.js"></script>
+    <script src="wishlist.js"></script>
+
+</body>
+</html>

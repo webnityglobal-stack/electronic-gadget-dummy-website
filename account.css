@@ -1,0 +1,380 @@
+/* ACCOUNT PAGE */
+
+.account-page {
+    max-width: 1250px;
+    margin: auto;
+    padding: 50px 5%;
+    min-height: 75vh;
+}
+
+.account-heading {
+    margin-bottom: 35px;
+}
+
+.account-heading > span {
+    color: #06b6d4;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.account-heading h1 {
+    color: #f8fafc;
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.account-heading h1 span {
+    color: #06b6d4;
+}
+
+.account-heading p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* LAYOUT */
+
+.account-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* SIDEBAR */
+
+.account-sidebar,
+.account-content {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 13px;
+    padding: 25px;
+}
+
+.account-sidebar {
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#2563eb,#06b6d4);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+
+.account-sidebar h3 {
+    color: #f8fafc;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.account-sidebar > p {
+    color: #94a3b8;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* MENU */
+
+.account-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.account-tab,
+.logout-btn {
+    width: 100%;
+    padding: 13px;
+    text-align: left;
+    border: none;
+    background: transparent;
+    border-radius: 7px;
+    color: #94a3b8;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.account-tab:hover,
+.account-tab.active {
+    background: rgba(6,182,212,.1);
+    color: #06b6d4;
+}
+
+.logout-btn {
+    color: #f87171;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin-top: 10px;
+}
+
+/* PANELS */
+
+.account-panel {
+    display: none;
+}
+
+.account-panel.active {
+    display: block;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.panel-heading h2 {
+    color: #f8fafc;
+    font-size: 20px;
+}
+
+.panel-heading button,
+.settings-card button {
+    padding: 10px 16px;
+    border: 1px solid #06b6d4;
+    background: transparent;
+    color: #06b6d4;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* FORM */
+
+.account-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.account-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.account-field label {
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.account-field input {
+    padding: 13px;
+    border-radius: 7px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: #080d18;
+    color: #f8fafc;
+    outline: none;
+}
+
+.account-field input:focus:not(:disabled) {
+    border-color: #06b6d4;
+}
+
+.account-field input:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.profile-actions button {
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-profile-btn {
+    background: #2563eb;
+    color: white;
+}
+
+#cancelEditBtn {
+    background: #334155;
+    color: white;
+}
+
+.profile-message {
+    color: #22c55e;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* ORDERS */
+
+.order-card {
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.order-header strong {
+    color: #f8fafc;
+    font-size: 13px;
+}
+
+.order-status {
+    color: #22c55e;
+    font-size: 12px;
+    background: rgba(34,197,94,.1);
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.order-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.order-product img {
+    width: 55px;
+    height: 55px;
+    background: #1e293b;
+    border-radius: 7px;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.order-product h4 {
+    color: #f8fafc;
+    font-size: 13px;
+}
+
+.order-product p {
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.order-total {
+    color: #06b6d4;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 12px;
+}
+
+.no-orders {
+    color: #94a3b8;
+    text-align: center;
+    padding: 45px 10px;
+}
+
+.no-orders a {
+    color: #06b6d4;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* SETTINGS */
+
+.settings-card {
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 9px;
+    margin-bottom: 15px;
+}
+
+.settings-card h3 {
+    color: #f8fafc;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.settings-card p {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.danger-card button {
+    border-color: #f87171;
+    color: #f87171;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 35px 5%;
+    background: #050914;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.copyright {
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .account-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .account-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 550px) {
+    .account-page {
+        padding: 35px 4%;
+    }
+
+    .account-heading h1 {
+        font-size: 30px;
+    }
+
+    .account-sidebar,
+    .account-content {
+        padding: 18px;
+    }
+
+    .account-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-menu {
+        grid-template-columns: 1fr;
+    }
+}

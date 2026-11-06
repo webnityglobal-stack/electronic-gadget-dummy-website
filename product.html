@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="product.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="shop.html?category=Smartphones">Smartphones</a>
+            <a href="shop.html?category=Laptops">Laptops</a>
+            <a href="shop.html?category=Headphones">Accessories</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="wishlist.html"><i data-lucide="heart"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+            <a href="login.html" class="account-btn">Account</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+</header>
+
+<main class="container product-page">
+
+    <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="shop.html">Shop</a>
+        <span>/</span>
+        <span id="breadcrumbName">Product Details</span>
+    </div>
+
+    <!-- PRODUCT DETAILS -->
+
+    <section class="product-details">
+
+        <!-- IMAGE GALLERY -->
+
+        <div class="product-gallery">
+
+            <div class="main-product-image">
+
+                <span class="product-discount" id="discountBadge"></span>
+
+                <button class="zoom-button" id="zoomButton" aria-label="Zoom image">
+                    <i data-lucide="zoom-in"></i>
+                </button>
+
+                <img src="" id="mainProductImage" alt="Product image">
+
+            </div>
+
+            <div class="thumbnail-gallery" id="thumbnailGallery"></div>
+
+        </div>
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-information">
+
+            <span class="detail-category" id="productCategory"></span>
+
+            <h1 id="productName">Loading Product...</h1>
+
+            <div class="detail-rating">
+                <span>★★★★★</span>
+                <strong id="productRating"></strong>
+                <a href="#reviews">Customer Reviews</a>
+            </div>
+
+            <div class="detail-price">
+                <h2 id="productPrice"></h2>
+                <del id="productMRP"></del>
+                <span id="productDiscount"></span>
+            </div>
+
+            <p class="tax-note">Inclusive of all taxes</p>
+
+            <div class="stock-status">
+                <i data-lucide="check-circle"></i>
+                In Stock – Ready to Ship
+            </div>
+
+            <p class="product-description" id="productDescription"></p>
+
+            <!-- COLORS -->
+
+            <div class="option-group">
+                <h3>Choose Color</h3>
+                <div class="color-options" id="colorOptions"></div>
+                <p class="selected-option" id="selectedColor"></p>
+            </div>
+
+            <!-- STORAGE -->
+
+            <div class="option-group">
+                <h3>Storage / Variant</h3>
+                <div class="storage-options" id="storageOptions"></div>
+            </div>
+
+            <!-- QUANTITY -->
+
+            <div class="option-group">
+                <h3>Quantity</h3>
+
+                <div class="quantity-control">
+                    <button id="decreaseQty" aria-label="Decrease quantity">−</button>
+                    <span id="quantity">1</span>
+                    <button id="increaseQty" aria-label="Increase quantity">+</button>
+                </div>
+            </div>
+
+            <!-- BUTTONS -->
+
+            <div class="product-buttons">
+
+                <button class="add-cart-detail" id="addToCartBtn">
+                    <i data-lucide="shopping-cart"></i>
+                    Add To Cart
+                </button>
+
+                <button class="buy-now-btn" id="buyNowBtn">
+                    Buy Now
+                    <i data-lucide="arrow-right"></i>
+                </button>
+
+            </div>
+
+            <button class="wishlist-detail" id="wishlistBtn">
+                <i data-lucide="heart"></i>
+                Add To Wishlist
+            </button>
+
+            <!-- BENEFITS -->
+
+            <div class="product-benefits">
+
+                <div>
+                    <i data-lucide="truck"></i>
+                    <span>Fast Delivery</span>
+                </div>
+
+                <div>
+                    <i data-lucide="shield-check"></i>
+                    <span>Secure Payment</span>
+                </div>
+
+                <div>
+                    <i data-lucide="refresh-ccw"></i>
+                    <span>Easy Returns*</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRODUCT SPECIFICATIONS -->
+
+    <section class="specification-section">
+
+        <div class="section-heading">
+            <div>
+                <span>PRODUCT INFORMATION</span>
+                <h2>Technical Specifications</h2>
+            </div>
+        </div>
+
+        <div class="specification-table" id="specificationTable"></div>
+
+    </section>
+
+    <!-- REVIEWS -->
+
+    <section class="reviews-section" id="reviews">
+
+        <div class="section-heading">
+            <div>
+                <span>CUSTOMER FEEDBACK</span>
+                <h2>Customer Reviews</h2>
+            </div>
+        </div>
+
+        <div class="review-summary">
+
+            <div class="review-score">
+                <h2 id="reviewAverage">4.8</h2>
+                <div class="stars">★★★★★</div>
+                <p>Based on demo reviews</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Excellent Product!</h3>
+                <p>Great quality and premium experience. Product design is impressive.</p>
+                <span>TechNova Demo Customer</span>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <h3>Worth Buying</h3>
+                <p>Good product and attractive design. Happy with the purchase.</p>
+                <span>TechNova Demo Customer</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RELATED PRODUCTS -->
+
+    <section class="related-section">
+
+        <div class="section-heading">
+            <div>
+                <span>YOU MAY ALSO LIKE</span>
+                <h2>Related Products</h2>
+            </div>
+
+            <a href="shop.html">View All →</a>
+        </div>
+
+        <div class="product-grid" id="relatedProducts"></div>
+
+    </section>
+
+</main>
+
+<!-- IMAGE ZOOM MODAL -->
+
+<div class="image-modal" id="imageModal">
+    <button id="closeZoom" aria-label="Close zoom">
+        <i data-lucide="x"></i>
+    </button>
+    <img id="zoomedImage" src="" alt="Zoomed product">
+</div>
+
+<footer class="footer">
+    <div class="copyright">
+        © 2026 TechNova. All Rights Reserved.
+    </div>
+</footer>
+
+<script src="product.js"></script>
+<script src="main.js"></script>
+<script src="product-details.js"></script>
+
+</body>
+</html>

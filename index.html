@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechNova | Electronics & Gadgets</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="shop.html?category=smartphones">Smartphones</a>
+            <a href="shop.html?category=laptops">Laptops</a>
+            <a href="shop.html?category=accessories">Accessories</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button aria-label="Search" onclick="location.href='shop.html'">
+                <i data-lucide="search"></i>
+            </button>
+
+            <a href="wishlist.html" aria-label="Wishlist">
+                <i data-lucide="heart"></i>
+            </a>
+
+            <a href="cart.html" class="cart-icon" aria-label="Cart">
+                <i data-lucide="shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="login.html" class="account-btn">Account</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+        </button>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero container">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                <i data-lucide="zap"></i>
+                NEXT GENERATION TECHNOLOGY
+            </span>
+
+            <h1>
+                Upgrade Your World With
+                <span>Next-Gen Tech.</span>
+            </h1>
+
+            <p>
+                Discover premium smartphones, laptops, audio devices
+                and smart gadgets. Experience technology without limits.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="shop.html" class="primary-btn">
+                    Explore Products
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+                <a href="shop.html" class="secondary-btn">
+                    View Collection
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>500+</h3>
+                    <p>Products</p>
+                </div>
+
+                <div>
+                    <h3>10K+</h3>
+                    <p>Happy Customers</p>
+                </div>
+
+                <div>
+                    <h3>4.9/5</h3>
+                    <p>Customer Rating</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-glow"></div>
+
+            <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000"
+                alt="Technology collection"
+            >
+
+            <div class="floating-card">
+                <i data-lucide="headphones"></i>
+                <div>
+                    <h4>Latest Gadgets</h4>
+                    <p>Explore the future</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="categories container">
+
+        <div class="section-heading">
+            <div>
+                <span>EXPLORE COLLECTIONS</span>
+                <h2>Shop By Category</h2>
+            </div>
+
+            <a href="shop.html">View All →</a>
+        </div>
+
+        <div class="category-grid">
+
+            <a href="shop.html?category=smartphones" class="category-card">
+                <i data-lucide="smartphone"></i>
+                <h3>Smartphones</h3>
+                <p>Explore devices</p>
+            </a>
+
+            <a href="shop.html?category=laptops" class="category-card">
+                <i data-lucide="laptop"></i>
+                <h3>Laptops</h3>
+                <p>Power your work</p>
+            </a>
+
+            <a href="shop.html?category=headphones" class="category-card">
+                <i data-lucide="headphones"></i>
+                <h3>Headphones</h3>
+                <p>Premium audio</p>
+            </a>
+
+            <a href="shop.html?category=smartwatches" class="category-card">
+                <i data-lucide="watch"></i>
+                <h3>Smart Watches</h3>
+                <p>Smart lifestyle</p>
+            </a>
+
+            <a href="shop.html?category=gaming" class="category-card">
+                <i data-lucide="gamepad-2"></i>
+                <h3>Gaming</h3>
+                <p>Level up</p>
+            </a>
+
+            <a href="shop.html?category=accessories" class="category-card">
+                <i data-lucide="cable"></i>
+                <h3>Accessories</h3>
+                <p>Everyday essentials</p>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- TRENDING PRODUCTS -->
+
+    <section class="products-section container">
+
+        <div class="section-heading">
+            <div>
+                <span>HANDPICKED FOR YOU</span>
+                <h2>Trending Products</h2>
+                <p>Discover the gadgets everyone is talking about.</p>
+            </div>
+
+            <a href="shop.html">View All →</a>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+
+    </section>
+
+    <!-- PROMO BANNER -->
+
+    <section class="promo container">
+
+        <div>
+            <span>TECHNOVA SPECIAL</span>
+            <h2>Technology Meets Innovation.</h2>
+            <p>Find your next favourite gadget today.</p>
+        </div>
+
+        <a href="shop.html" class="promo-btn">
+            Shop Now →
+        </a>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section class="services container">
+
+        <div class="service-card">
+            <i data-lucide="truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Reliable doorstep delivery</p>
+        </div>
+
+        <div class="service-card">
+            <i data-lucide="shield-check"></i>
+            <h3>Secure Shopping</h3>
+            <p>Protected transactions</p>
+        </div>
+
+        <div class="service-card">
+            <i data-lucide="headset"></i>
+            <h3>Expert Support</h3>
+            <p>We're here to help you</p>
+        </div>
+
+        <div class="service-card">
+            <i data-lucide="refresh-ccw"></i>
+            <h3>Easy Returns</h3>
+            <p>Simple return process</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container footer-content">
+
+        <div>
+            <a href="index.html" class="logo">
+                TECH<span>NOVA</span>.
+            </a>
+            <p>Upgrade your world with next-generation technology.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </div>
+
+        <div>
+            <h3>Customer Support</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 TechNova. All Rights Reserved.
+    </div>
+</footer>
+
+<script src="product.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

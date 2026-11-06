@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | TechNova</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Tech<span>Nova</span></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html">Cart <span id="cartCount">0</span></a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            ☰
+        </button>
+    </header>
+
+    <main class="checkout-page">
+
+        <div class="checkout-heading">
+            <span>ALMOST THERE</span>
+            <h1>Secure <span>Checkout</span></h1>
+            <p>Complete your details to place your order.</p>
+        </div>
+
+        <div class="checkout-layout">
+
+            <!-- CUSTOMER FORM -->
+            <section class="checkout-form-section">
+
+                <form id="checkoutForm">
+
+                    <div class="checkout-card">
+
+                        <h2>01. Contact Information</h2>
+
+                        <div class="form-group">
+                            <label for="customerName">Full Name *</label>
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="customerEmail">Email Address *</label>
+                                <input
+                                    type="email"
+                                    id="customerEmail"
+                                    placeholder="example@email.com"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">Mobile Number *</label>
+                                <input
+                                    type="tel"
+                                    id="customerPhone"
+                                    placeholder="10-digit mobile number"
+                                    pattern="[6-9][0-9]{9}"
+                                    maxlength="10"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="checkout-card">
+
+                        <h2>02. Delivery Address</h2>
+
+                        <div class="form-group">
+                            <label for="address">Full Address *</label>
+                            <textarea
+                                id="address"
+                                rows="3"
+                                placeholder="House number, street, area..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="Enter city"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <input
+                                    type="text"
+                                    id="state"
+                                    placeholder="Enter state"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pincode">Pincode *</label>
+                                <input
+                                    type="text"
+                                    id="pincode"
+                                    placeholder="6-digit pincode"
+                                    pattern="[0-9]{6}"
+                                    maxlength="6"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="landmark">Landmark</label>
+                                <input
+                                    type="text"
+                                    id="landmark"
+                                    placeholder="Nearby landmark"
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="checkout-card">
+
+                        <h2>03. Payment Method</h2>
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="COD"
+                                checked
+                            >
+
+                            <span class="payment-icon">💵</span>
+
+                            <span class="payment-info">
+                                <strong>Cash on Delivery</strong>
+                                <small>Pay when your order arrives.</small>
+                            </span>
+
+                        </label>
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="Online Demo"
+                            >
+
+                            <span class="payment-icon">💳</span>
+
+                            <span class="payment-info">
+                                <strong>Online Payment</strong>
+                                <small>Demo option – no actual payment will be processed.</small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                    <button type="submit" class="place-order-btn">
+                        Place Your Order →
+                    </button>
+
+                    <p class="checkout-security">
+                        🔒 Your checkout details are handled in this demo.
+                    </p>
+
+                </form>
+
+            </section>
+
+            <!-- ORDER SUMMARY -->
+            <aside class="checkout-summary">
+
+                <h2>Order Summary</h2>
+
+                <div id="checkoutItems"></div>
+
+                <div class="checkout-divider"></div>
+
+                <div class="checkout-summary-row">
+                    <span>Subtotal</span>
+                    <strong id="checkoutSubtotal">₹0</strong>
+                </div>
+
+                <div class="checkout-summary-row">
+                    <span>Discount</span>
+                    <strong id="checkoutDiscount">₹0</strong>
+                </div>
+
+                <div class="checkout-summary-row">
+                    <span>Delivery</span>
+                    <strong class="free-text">FREE</strong>
+                </div>
+
+                <div class="checkout-divider"></div>
+
+                <div class="checkout-summary-row final-total">
+                    <span>Total Amount</span>
+                    <strong id="checkoutTotal">₹0</strong>
+                </div>
+
+            </aside>
+
+        </div>
+
+        <!-- ORDER SUCCESS MESSAGE -->
+        <div id="orderSuccess" class="order-success" hidden>
+
+            <div class="success-icon">✓</div>
+
+            <h2>Order Placed Successfully!</h2>
+
+            <p id="successMessage">
+                Thank you for shopping with TechNova.
+            </p>
+
+            <a href="shop.html">Continue Shopping</a>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="index.html" class="logo">Tech<span>Nova</span></a>
+            <p>Upgrade your lifestyle with the latest technology.</p>
+        </div>
+
+        <p class="copyright">
+            © 2026 TechNova. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="product.js"></script>
+    <script src="main.js"></script>
+    <script src="checkout.js"></script>
+
+</body>
+</html>
