@@ -407,3 +407,145 @@
 .product-actions .wishlist-btn:hover svg {
     stroke: #ef4444;
 }
+
+/* =================================
+   SHOP PAGE RESPONSIVE FIX
+================================= */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+
+    .shop-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .shop-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .shop-product-grid .product-image {
+        height: 200px;
+    }
+
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+
+    .shop-banner {
+        padding: 45px 0;
+    }
+
+    .shop-section {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .shop-layout {
+        display: block;
+    }
+
+    .mobile-filter-btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-sidebar {
+        display: none;
+        position: static;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .filter-sidebar.show {
+        display: block;
+    }
+
+    .shop-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .toolbar-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .toolbar-actions select {
+        width: 100%;
+        min-height: 45px;
+    }
+
+    .shop-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .shop-product-grid .product-image {
+        height: 170px;
+    }
+
+    .shop-product-grid .product-info {
+        padding: 12px;
+    }
+
+    .shop-product-grid .product-info h3 {
+        font-size: 13px;
+        line-height: 1.4;
+        min-height: 36px;
+    }
+
+    .shop-product-grid .product-price {
+        font-size: 15px;
+    }
+
+    .shop-product-grid .product-image img {
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+    }
+
+    .product-actions {
+        right: 7px;
+        top: 7px;
+    }
+
+    .product-actions .wishlist-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .product-actions .wishlist-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
+
+/* Small mobile devices */
+@media (max-width: 380px) {
+
+    .shop-product-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .shop-product-grid .product-image {
+        height: 230px;
+    }
+
+    .shop-product-grid .product-info {
+        padding: 16px;
+    }
+
+}
