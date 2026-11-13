@@ -859,3 +859,302 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+/* =================================
+   MOBILE NAVBAR - TECHNOVA
+================================= */
+
+@media (max-width: 768px) {
+
+    .nav-content {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: 70px;
+    }
+
+    .navbar .logo {
+        font-size: 20px;
+        flex-shrink: 0;
+    }
+
+    /* Show all navbar actions */
+
+    .nav-actions {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 13px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .nav-actions button,
+    .nav-actions > a {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .nav-actions svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    /* Search, Wishlist, Cart */
+
+    .nav-actions .wishlist-icon,
+    .nav-actions .cart-icon {
+        position: relative;
+        color: #ffffff;
+    }
+
+    #wishlistCount,
+    #cartCount {
+        display: flex !important;
+        position: absolute;
+        top: -9px;
+        right: -9px;
+        min-width: 17px;
+        height: 17px;
+        font-size: 10px;
+    }
+
+    /* Account */
+
+    .nav-actions .account-btn {
+        display: inline-flex !important;
+        padding: 8px 11px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Menu button */
+
+    .menu-btn {
+        display: none !important;
+    }
+
+    /* Navigation links */
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #080d18;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        z-index: 999;
+    }
+
+    .nav-links.active,
+    .nav-links.show {
+        display: flex !important;
+    }
+}
+
+/* Very small screens */
+
+@media (max-width: 380px) {
+
+    .nav-content {
+        gap: 5px;
+    }
+
+    .navbar .logo {
+        font-size: 17px;
+    }
+
+    .nav-actions {
+        gap: 9px;
+    }
+
+    .nav-actions svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .nav-actions .account-btn {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+}
+
+/* =================================
+   TECHNOVA PROFESSIONAL FOOTER
+================================= */
+
+.footer {
+    background: #060b15;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 65px 0 20px;
+    color: #f8fafc;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 45px;
+    padding-bottom: 45px;
+}
+
+/* BRAND */
+
+.footer-brand .logo {
+    display: inline-block;
+    font-size: 29px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 18px;
+}
+
+.footer-brand .logo span {
+    color: #2563eb;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 300px;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 9px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-4px);
+}
+
+.footer-socials svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* FOOTER LINKS */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #06b6d4;
+    padding-left: 5px;
+}
+
+/* DIVIDER */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.09);
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 22px;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.footer-bottom span {
+    color: #ef4444;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .footer {
+        padding: 45px 0 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 18px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-links h3 {
+        font-size: 14px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+}

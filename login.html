@@ -1,115 +1,294 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login | TechNova</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="auth.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
+
 <body>
 
+    <!-- NAVBAR -->
+
     <header class="navbar">
-        <a href="index.html" class="logo">Tech<span>Nova</span></a>
 
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="wishlist.html">Wishlist</a>
-            <a href="cart.html">Cart</a>
-        </nav>
+        <div class="container nav-content">
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            ☰
-        </button>
+            <a href="index.html" class="logo">
+                TECH<span>NOVA</span>.
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="wishlist.html" class="wishlist-icon" aria-label="Wishlist">
+                    <i data-lucide="heart"></i>
+                    <span id="wishlistCount">0</span>
+                </a>
+
+                <a href="cart.html" class="cart-icon" aria-label="Cart">
+                    <i data-lucide="shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </a>
+
+            </div>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+        </div>
+
     </header>
+
+
+    <!-- LOGIN SECTION -->
 
     <main class="auth-page">
 
-        <div class="auth-container">
+        <div class="auth-form-card">
 
-            <div class="auth-brand">
-                <span class="auth-tag">WELCOME BACK</span>
-
-                <h1>Login to <span>TechNova</span></h1>
-
-                <p>
-                    Sign in to explore the latest gadgets,
-                    manage your orders and enjoy shopping.
-                </p>
-
-                <div class="auth-benefits">
-                    <p>✓ Manage your orders</p>
-                    <p>✓ Save your favourite products</p>
-                    <p>✓ Enjoy a better shopping experience</p>
-                </div>
+            <div class="login-icon">
+                <i data-lucide="user-round"></i>
             </div>
 
-            <div class="auth-form-card">
+            <span class="auth-tag">WELCOME BACK</span>
 
-                <h2>Welcome Back!</h2>
-                <p class="auth-subtitle">Enter your account details.</p>
+            <h2>Login to <span>TechNova</span></h2>
 
-                <form id="loginForm">
+            <p class="auth-subtitle">
+                Enter your account details to continue shopping.
+            </p>
 
-                    <div class="auth-input-group">
-                        <label for="loginEmail">Email Address</label>
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+                <div class="auth-input-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="auth-input-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="password-field">
 
                         <input
-                            type="email"
-                            id="loginEmail"
-                            placeholder="Enter your email"
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
                             required
                         >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="loginPassword"
+                        >
+                            Show
+                        </button>
+
                     </div>
 
-                    <div class="auth-input-group">
-                        <label for="loginPassword">Password</label>
+                </div>
 
-                        <div class="password-field">
-                            <input
-                                type="password"
-                                id="loginPassword"
-                                placeholder="Enter your password"
-                                required
-                            >
 
-                            <button
-                                type="button"
-                                class="toggle-password"
-                                data-target="loginPassword"
-                            >
-                                Show
-                            </button>
-                        </div>
-                    </div>
+                <p id="loginMessage" class="auth-message"></p>
 
-                    <p id="loginMessage" class="auth-message"></p>
 
-                    <button type="submit" class="auth-submit">
-                        Login to Account →
-                    </button>
+                <button type="submit" class="auth-submit">
+                    Login to Account
+                    <i data-lucide="arrow-right"></i>
+                </button>
 
-                </form>
+            </form>
 
-                <p class="auth-switch">
-                    Don't have an account?
-                    <a href="register.html">Create Account</a>
-                </p>
 
-            </div>
+            <!-- REGISTER LINK -->
+
+            <p class="auth-switch">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </p>
+
+
+            <a href="index.html" class="back-home">
+                <i data-lucide="arrow-left"></i>
+                Back to Home
+            </a>
 
         </div>
 
     </main>
 
-    <footer class="auth-footer">
-        © 2026 TechNova. All rights reserved.
-    </footer>
 
+    <!-- FOOTER -->
+
+   
+<!-- ==============================
+     TECHNOVA FOOTER
+============================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    TECH<span>NOVA</span>.
+                </a>
+
+                <p>
+                    Upgrade your world with next-generation technology.
+                    Discover premium gadgets, electronics and smart devices
+                    at TechNova.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">
+                        <i data-lucide="facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="Youtube">
+                        <i data-lucide="youtube"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop All Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+
+            <!-- CUSTOMER ACCOUNT -->
+            <div class="footer-links">
+
+                <h3>My Account</h3>
+
+                <a href="login.html">Login / Register</a>
+                <a href="account.html">My Profile</a>
+                <a href="wishlist.html">My Wishlist</a>
+                <a href="cart.html">Shopping Cart</a>
+
+            </div>
+
+            <!-- SUPPORT -->
+            <div class="footer-links">
+
+                <h3>Customer Support</h3>
+
+                <a href="contact.html">Help & Support</a>
+                <a href="tracking.html">Track Your Order</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM FOOTER -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 TechNova. All Rights Reserved.
+            </p>
+
+            <p>
+                Designed with <span>♥</span> for Technology Lovers.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="main.js"></script>
     <script src="auth.js"></script>
 
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    </script>
+
 </body>
+
 </html>

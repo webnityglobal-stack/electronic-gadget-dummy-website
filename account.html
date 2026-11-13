@@ -1,30 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Account | TechNova</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="account.css">
 </head>
+
 <body>
 
 <header class="navbar">
-    <a href="index.html" class="logo">Tech<span>Nova</span></a>
 
-    <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="wishlist.html">Wishlist</a>
-        <a href="cart.html">Cart</a>
-        <a href="account.html" class="active">My Account</a>
-    </nav>
+    <div class="container nav-content">
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        ☰
-    </button>
+        <a href="index.html" class="logo">
+            TECH<span>NOVA</span>.
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html">Cart</a>
+            <a href="account.html" class="active">My Account</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+            ☰
+        </button>
+
+    </div>
+
 </header>
 
 <main class="account-page">
@@ -38,6 +49,7 @@
     <div class="account-layout">
 
         <!-- SIDEBAR -->
+
         <aside class="account-sidebar">
 
             <div class="profile-avatar" id="profileAvatar">U</div>
@@ -46,6 +58,7 @@
             <p id="sidebarEmail">customer@email.com</p>
 
             <div class="account-menu">
+
                 <button class="account-tab active" data-tab="profile">
                     👤 My Profile
                 </button>
@@ -61,14 +74,17 @@
                 <button id="logoutBtn" class="logout-btn">
                     ↪ Logout
                 </button>
+
             </div>
 
         </aside>
 
         <!-- MAIN CONTENT -->
+
         <section class="account-content">
 
             <!-- PROFILE -->
+
             <div class="account-panel active" id="profilePanel">
 
                 <div class="panel-heading">
@@ -92,14 +108,20 @@
 
                         <div class="account-field">
                             <label>Mobile Number</label>
-                            <input type="tel" id="profilePhone"
-                                pattern="[6-9][0-9]{9}" maxlength="10"
-                                disabled required>
+                            <input
+                                type="tel"
+                                id="profilePhone"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10"
+                                disabled
+                                required
+                            >
                         </div>
 
                     </div>
 
                     <div class="profile-actions" id="profileActions" hidden>
+
                         <button type="submit" class="save-profile-btn">
                             Save Changes
                         </button>
@@ -107,6 +129,7 @@
                         <button type="button" id="cancelEditBtn">
                             Cancel
                         </button>
+
                     </div>
 
                     <p id="profileMessage" class="profile-message"></p>
@@ -116,6 +139,7 @@
             </div>
 
             <!-- ORDERS -->
+
             <div class="account-panel" id="ordersPanel">
 
                 <div class="panel-heading">
@@ -127,6 +151,7 @@
             </div>
 
             <!-- SETTINGS -->
+
             <div class="account-panel" id="settingsPanel">
 
                 <div class="panel-heading">
@@ -159,15 +184,110 @@
 
 </main>
 
+
+<!-- ==============================
+     TECHNOVA FOOTER
+============================== -->
+
 <footer class="footer">
-    <div class="footer-content">
-        <a href="index.html" class="logo">Tech<span>Nova</span></a>
-        <p>Upgrade your lifestyle with the latest technology.</p>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <!-- BRAND -->
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    TECH<span>NOVA</span>.
+                </a>
+
+                <p>
+                    Upgrade your world with next-generation technology.
+                    Discover premium gadgets, electronics and smart devices
+                    at TechNova.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">
+                        <i data-lucide="facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i data-lucide="instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="Youtube">
+                        <i data-lucide="youtube"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop All Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+
+            <!-- CUSTOMER ACCOUNT -->
+            <div class="footer-links">
+
+                <h3>My Account</h3>
+
+                <a href="login.html">Login / Register</a>
+                <a href="account.html">My Profile</a>
+                <a href="wishlist.html">My Wishlist</a>
+                <a href="cart.html">Shopping Cart</a>
+
+            </div>
+
+            <!-- SUPPORT -->
+            <div class="footer-links">
+
+                <h3>Customer Support</h3>
+
+                <a href="contact.html">Help & Support</a>
+                <a href="tracking.html">Track Your Order</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- BOTTOM FOOTER -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 TechNova. All Rights Reserved.
+            </p>
+
+            <p>
+                Designed with <span>♥</span> for Technology Lovers.
+            </p>
+
+        </div>
+
     </div>
 
-    <p class="copyright">© 2026 TechNova. All rights reserved.</p>
 </footer>
 
+
+<script src="main.js"></script>
 <script src="account.js"></script>
 
 </body>
